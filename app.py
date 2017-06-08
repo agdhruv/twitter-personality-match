@@ -19,6 +19,18 @@ twitter_api = twitter.Api(consumer_key=twitter_consumer_key, consumer_secret=twi
 
 # Start making API call
 handle = "@ATPWorldTour"
+
 statuses = twitter_api.GetUserTimeline(screen_name=handle, count=200, include_rts=False)
 
+# Can be used to print all the returned statuses
+# for status in statuses:
+# 	print status.text
 
+# Prepare API call to Watson
+# We concatenate all statuses' texts into one large string to send to Watson
+
+text = ""
+
+for status in statuses:
+	if status.lang == 'en':
+		text += status.text.encode('utf-8')

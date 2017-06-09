@@ -5,7 +5,7 @@ import json
 import twitter
 from watson_developer_cloud import PersonalityInsightsV2 as PersonalityInsights
 
-import tokens # python module that contains my secret keys
+import tokens # python module that contains my secret keys (for personal reference - go to Twitter and Bluemix dashboards to find secret keys)
 
 
 # Function to 'flatten' the JSON object that is returned
